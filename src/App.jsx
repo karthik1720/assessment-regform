@@ -32,7 +32,7 @@ function App() {
     message: "",
   });
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     console.log("clicked");
     const errors = validation;
     const { name, mobile } = inputVal;
