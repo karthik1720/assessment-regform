@@ -109,8 +109,8 @@ function App() {
               name="name"
               value={inputVal.name}
               onChange={handleChange}
-              span={validation.name}
             ></Input>
+            <span>{validation.name}</span>
             <Input
               name="email"
               value={inputVal.email}
