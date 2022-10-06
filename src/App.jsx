@@ -33,6 +33,7 @@ function App() {
   });
 
   const handleSubmit = () => {
+    console.log("clicked");
     const errors = validation;
     const { name, mobile } = inputVal;
     if (!name.trim()) {
