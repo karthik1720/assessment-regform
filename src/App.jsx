@@ -146,7 +146,6 @@ function App() {
               name="message"
               value={inputVal.message}
               className="TextArea"
-              id=""
               onChange={handleChange}
               span={validation.message}
             ></textarea>
