@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/regform-validation/static/css/main.84030c87.css",
+    "main.js": "/regform-validation/static/js/main.1f126b21.js",
+    "index.html": "/regform-validation/index.html",
+    "main.84030c87.css.map": "/regform-validation/static/css/main.84030c87.css.map",
+    "main.1f126b21.js.map": "/regform-validation/static/js/main.1f126b21.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.84030c87.css",
+    "static/js/main.1f126b21.js"
+  ]
+}
