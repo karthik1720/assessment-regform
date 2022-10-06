@@ -11,6 +11,7 @@ function Input(props) {
         value={props.value}
         onChange={props.onChange}
       />
+      <span>{props.span}</span>
     </div>
   );
 }
