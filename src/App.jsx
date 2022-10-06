@@ -21,7 +21,6 @@ function App() {
     });
   };
 
-  const [err, setErr] = useState(false);
   // ==========================================
   const [validation, setValidation] = useState({
     name: "",
@@ -34,28 +33,22 @@ function App() {
   });
 
   const handleSubmit = () => {
-    setErr(false);
     const errors = validation;
-    const { name, email, mobile, country, city, state, message } = inputVal;
+    const { name, mobile } = inputVal;
     if (!name.trim()) {
       errors.name = "Please enter the name";
-      setErr(true);
     } else if (name.trim().length < 2) {
       errors.name = "Enter full name";
-      setErr(true);
     } else if (name.trim().match(/[0-9]/)) {
       errors.name = "Name cannot contain numbers";
-      setErr(true);
     } else errors.name = "";
     //email
     const emailCond =
       /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)*$/;
     if (!inputVal.email.trim()) {
       errors.email = "Email is required";
-      setErr(true);
     } else if (!inputVal.email.match(emailCond)) {
       errors.email = "Please enter a valid email address";
-      setErr(true);
     } else {
       errors.email = "";
     }
@@ -63,18 +56,15 @@ function App() {
     const phCond = /[0-9]/;
     if (!mobile.trim()) {
       errors.mobile = "Enter a mobile number";
-      setErr(true);
     } else if (mobile.trim().length < 10 || mobile.trim().length > 10) {
       errors.mobile = "Enter a valid 10 digits mobile number";
-      setErr(true);
     } else if (!mobile.trim().match(phCond)) {
       errors.mobile = "Mobile number should be in numbers";
-      setErr(true);
     } else errors.mobile = "";
 
     for (
       let index = 0, countryFound = false;
-      index < cs.countries.length && countryFound == false;
+      index < cs.countries.length && countryFound === false;
       index++
     ) {
       if (
@@ -85,7 +75,7 @@ function App() {
         errors.country = "";
         for (
           let indexb = 0, stateFound = false;
-          indexb < cs.countries[index].states.length && stateFound == false;
+          indexb < cs.countries[index].states.length && stateFound === false;
           indexb++
         ) {
           if (
@@ -96,13 +86,11 @@ function App() {
             stateFound = true;
           } else {
             errors.state = "State name invalid";
-            setErr(true);
           }
         }
       } else {
         errors.country = "Country name invalid";
         errors.state = "Please check country name";
-        setErr(true);
       }
     }
     setValidation(errors);
