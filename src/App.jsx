@@ -46,6 +46,7 @@ function App() {
     } else {
       setValidation((prev) => ({ ...prev, name: "" }));
     }
+    console.log("Called");
     // email
     const emailCond =
       /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)*$/;
@@ -59,9 +60,9 @@ function App() {
     //mobile
     const mobile = inputVal.mobile;
     const phCond = /[0-9]/;
-    if (mobile) {
+    if (!mobile) {
       setValidation((prev) => ({ ...prev, mobile: "Enter mobile number" }));
-    } else if (inputVal.mobile.length < 10 || inputVal.mobile.length > 10) {
+    } else if (inputVal.mobile.trim().length !== 10) {
       setValidation((prev) => ({ ...prev, mobile: "Enter valid number" }));
     } else if (!inputVal.mobile.trim().match(phCond)) {
       setValidation((prev) => ({
@@ -133,7 +134,7 @@ function App() {
                 value={inputVal.value}
                 onChange={handleChange}
               />
-              {validation.name && <span>{validation.email}</span>}
+              {validation.email && <span>{validation.email}</span>}
             </div>
             <div className="InputContainer">
               <label>Mobile</label>
@@ -144,7 +145,7 @@ function App() {
                 value={inputVal.value}
                 onChange={handleChange}
               />
-              {validation.name && <span>{validation.mobile}</span>}
+              {validation.mobile && <span>{validation.mobile}</span>}
             </div>
             <div className="InputContainer">
               <label>Country</label>
@@ -155,7 +156,7 @@ function App() {
                 value={inputVal.value}
                 onChange={handleChange}
               />
-              {validation.name && <span>{validation.country}</span>}
+              {validation.country && <span>{validation.country}</span>}
             </div>
             <div className="InputContainer">
               <label>State</label>
@@ -166,7 +167,7 @@ function App() {
                 value={inputVal.value}
                 onChange={handleChange}
               />
-              {validation.name && <span>{validation.state}</span>}
+              {validation.state && <span>{validation.state}</span>}
             </div>
             <div className="InputContainer">
               <label>City</label>
