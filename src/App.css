@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #ebebe8;
+  background-color: rgb(255, 219, 219);
 }
 
 .FormWrapper {
@@ -14,11 +14,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #ebebe8;
+  color: #e0e6d6;
   background-color: #31352e;
   border-radius: 15px;
   overflow: hidden;
-  border: 5px solid #31352e;
+  border: 7px solid #31352e;
 }
 .Inputs {
   display: flex;
@@ -40,9 +40,9 @@
   height: 30px;
   padding: 0;
   margin: 0;
-  color: #dadfd1;
+  color: #e0e6d6;
   background-color: transparent;
-  border: 1px solid #9ba090;
+  border: 1px solid #e0e6d6;
   border-radius: 5px;
 }
 .InputsContainer {
@@ -58,8 +58,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
-  background-color: #9ba090;
+  color: #31352e;
+  background-color: #e0e6d6;
 }
 .Footer {
   display: flex;
@@ -78,7 +78,9 @@
   height: 100%;
   resize: none;
   background-color: transparent;
-  color: #dadfd1;
+  border: 1px solid #e0e6d6;
+  border-radius: 5px;
+  color: #e0e6d6;
 }
 
 .FormSubmit {
@@ -94,11 +96,11 @@ span {
   margin-top: 20px;
   cursor: pointer;
   padding: 7px 100px;
-  background-color: #9ba090;
+  background-color: #e0e6d6;
   border: none;
   border-radius: 5px;
 }
 label {
-  color: #9ba090;
+  color: #e0e6d6;
   padding-bottom: 3px;
 }
